@@ -1,0 +1,53 @@
+@model Filmes_Mvc.Models.Filme
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h1>Cadastro</h1>
+<br />
+
+<h4>Filme</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="Titulo" class="control-label fw-bold"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DataDeLancamento" class="control-label fw-bold"></label>
+                <input asp-for="DataDeLancamento" class="form-control" />
+                <span asp-validation-for="DataDeLancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Genero" class="control-label fw-bold"></label>
+                <input asp-for="Genero" class="form-control" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Preco" class="control-label fw-bold"></label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-file-earmark-plus"></i> Cadastrar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary btn-sm"><i class="bi bi-box-arrow-down-left"></i> Voltar para a Listagem</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

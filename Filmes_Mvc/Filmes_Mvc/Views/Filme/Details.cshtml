@@ -1,0 +1,42 @@
+@model Filmes_Mvc.Models.Filme
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1><br />
+
+<div>
+    <h4>Filme</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataDeLancamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataDeLancamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-secondary btn-sm"><i class="bi bi-pencil-square"></i> Alterar</a> |
+    <a asp-action="Index" class="btn btn-secondary btn-sm"><i class="bi bi-box-arrow-down-left"></i> Voltar para a Listagem</a>
+</div>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Bem-vindo";
+}
+
+<h2>Bem-vindo!</h2>
+
+<ol>
+    @for (int i = 1; i <= (int)ViewData["Numero"]!; i++)
+    {
+        <li>Olá @ViewData["Nome"]! --- ID: @ViewData["Id"].</li>
+    }
+</ol>
+
+
+
